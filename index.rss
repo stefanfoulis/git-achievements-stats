@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?><rss version="2.0"><channel>
 <title>Jason Meridth's Git Achievements</title>
+<item><title>Apprentice Web Designer (Level 1)</title><description>Instantly browse your working repository in gitweb with git instaweb</description></item>
 <item><title>Apprentice Thug (Level 1)</title><description>Forced pushed a branch with git push -f</description></item>
 <item><title>Apprentice Socialite (Level 2)</title><description>pushed a branch to a remote repository using git push</description></item>
 <item><title>Dentist</title><description>Extracted patches using git log -p.</description></item>
@@ -19,5 +20,4 @@
 <item><title>Apprentice Author (Level 2)</title><description>Made 2^Level commits using git commit.</description></item>
 <item><title>Let there be light</title><description>Commit without a parent.</description></item>
 <item><title>Caretaker</title><description>Added a .gitignore file to a repository.</description></item>
-<item><title>Homeowner</title><description>Set global email address using git config.</description></item>
 </channel></rss>
