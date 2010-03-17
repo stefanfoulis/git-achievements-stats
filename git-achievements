@@ -130,7 +130,8 @@ function count_unlock_achievement
 function check_for_achievements
 {
     # Anyone know of a cleaner way of checking for hooks?
-    hooks=`ls .git/hooks/ 2>/dev/null | grep -v sample | wc -l`
+    gitdir=`git rev-parse --git-dir`
+    hooks=`ls $gitdir/hooks/ 2>/dev/null | grep -v sample | wc -l`
     if [ ${hooks} -ge 1 ] ; then
         hcount_unlock_achievement "Carpenter" "Custom git hooks are installed which help catch issues before they are shared." "$hooks"
     fi
