@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?><rss version="2.0"><channel>
 <title>Jason Meridth's Git Achievements</title>
+<item><title>Dentist</title><description>Extracted patches using git log -p.</description></item>
 <item><title>Apprentice Historian (Level 3)</title><description>Investigate the commit log using git log.</description></item>
 <item><title>Apprentice Gipsy (Level 1)</title><description>Create, list, delete a tag signed with GPG using git tag</description></item>
 <item><title>Apprentice Butcher (Level 1)</title><description>Performed an interactive rebase using git rebase -i.</description></item>
@@ -19,5 +20,4 @@
 <item><title>Homeowner</title><description>Set global email address using git config.</description></item>
 <item><title>Baptised</title><description>Set global user name using git config.</description></item>
 <item><title>Master Carpenter (Level        1)</title><description>Custom git hooks are installed which help catch issues before they are shared.</description></item>
-<item><title>Apprentice Socialite (Level 1)</title><description>pushed a branch to a remote repository using git push</description></item>
 </channel></rss>
