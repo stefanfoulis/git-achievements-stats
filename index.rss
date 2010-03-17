@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?><rss version="2.0"><channel>
 <title>Benjamin C Meyer's Git Achievements</title>
+<item><title>Apprentice Seamstress (Level 3)</title><description>amended a commit with git commit --amend.</description></item>
 <item><title>Master Carpenter (Level 14)</title><description>Custom git hooks are installed which help catch issues before they are shared.</description></item>
 <item><title>Inventor (hooks)</title><description>Used a command that isn't part of the built in Git command</description></item>
 <item><title>Presenter (Level 4)</title><description>Shows one or more objects (blobs, trees, tags and commits) with git show</description></item>
@@ -19,5 +20,4 @@
 <item><title>Inventor (achievements)</title><description>Used a command that isn't part of the built in Git tools</description></item>
 <item><title>Apprentice Butcher (Level 1)</title><description>Performed an interactive rebase using git rebase -i.</description></item>
 <item><title>Apprentice Chimney Sweeper (Level 2)</title><description>Used git gc to run a number of housekeeping tasks on the current repository.</description></item>
-<item><title>Apprentice Archivist (Level 1)</title><description>Prepare each commit with its patch in one file per commit with git format-patch</description></item>
 </channel></rss>
