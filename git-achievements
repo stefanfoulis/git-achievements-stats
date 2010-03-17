@@ -29,7 +29,7 @@
 # SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 #
 
-function git_achivements_command
+function git_achievements_command
 {
     case $2 in
         -p|--publish )
@@ -455,7 +455,7 @@ if [ ! "$1" = "achievements" ] ; then
         exit $r
     fi
 else
-    git_achivements_command "$@"
+    git_achievements_command "$@"
 fi
 
 if [ "`echo '$1' | sed -e 's/=.*//g'`" = "--git-dir" ] ; then
