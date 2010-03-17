@@ -15,8 +15,8 @@ function runtest() {
 
     git achievements --help
 
-    git config --global user.name "Benjamin C Meyer"
-    git config --global user.email "ben@meyerhome.net"
+    git config user.name "Benjamin C Meyer"
+    git config user.email "ben@meyerhome.net"
 
     git init
 

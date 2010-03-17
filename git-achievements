@@ -200,10 +200,10 @@ function check_for_achievements
             esac
             ;;
         config )
-            if [[ $# -ge 4 && $2 = "--global" && $3 = "user.name" ]] ; then
+            if [[ ( $# -ge 3 && $2 = "user.name" ) || ( $# -ge 4 && $3 = "user.name" ) ]] ; then
                 unlock_achievement "Baptised" "Set global user name using git config."
             fi
-            if [[ $# -ge 4 && $2 = "--global" && $3 = "user.email" ]] ; then
+            if [[ ( $# -ge 3 && $2 = "user.email" ) || ( $# -ge 4 && $3 = "user.email" ) ]] ; then
                 unlock_achievement "Homeowner" "Set global email address using git config."
             fi
             ;;
