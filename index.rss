@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?><rss version="2.0"><channel>
 <title>Alan Rogers's Git Achievements</title>
+<item><title>Apprentice Cleaning lady (Level 1)</title><description>Remove untracked files from the working tree with git clean</description></item>
 <item><title>Inventor (clean)</title><description>Used a command that isn't part of the built in Git command</description></item>
 <item><title>Apprentice Traveler (Level 3)</title><description>Streamed changes between another rcs with git svn or git p4.</description></item>
 <item><title>Apprentice Chimney Sweeper (Level 1)</title><description>Used git gc to run a number of housekeeping tasks on the current repository.</description></item>
@@ -19,5 +20,4 @@
 <item><title>Inventor (merge)</title><description>Used a command that isn't part of the built in Git command</description></item>
 <item><title>Inventor (fetch)</title><description>Used a command that isn't part of the built in Git command</description></item>
 <item><title>Apprentice Traveler (Level 1)</title><description>Streamed changes between another rcs with git svn or git p4.</description></item>
-<item><title>Inventor (svn)</title><description>Used a command that isn't part of the built in Git command</description></item>
 </channel></rss>
