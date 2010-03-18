@@ -1,4 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?><rss version="2.0"><channel>
 <title>Graeme Mathieson's Git Achievements</title>
+<item><title>Apprentice Socialite (Level 1)</title><description>pushed a branch to a remote repository using git push</description></item>
 <item><title>Student</title><description>Accessed the documentation for a command with git [command] --help</description></item>
 </channel></rss>
