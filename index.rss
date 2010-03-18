@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?><rss version="2.0"><channel>
 <title>Alan Rogers's Git Achievements</title>
+<item><title>Inventor (gc)</title><description>Used a command that isn't part of the built in Git command</description></item>
 <item><title>Inventor (checkout)</title><description>Used a command that isn't part of the built in Git command</description></item>
 <item><title>Inventor (branch)</title><description>Used a command that isn't part of the built in Git command</description></item>
 <item><title>Apprentice Product Manager (Level 1)</title><description>Stash the changes in a dirty working directory away with git stash.</description></item>
@@ -19,5 +20,4 @@
 <item><title>Inventor (commit)</title><description>Used a command that isn't part of the built in Git command</description></item>
 <item><title>Inventor (add)</title><description>Used a command that isn't part of the built in Git command</description></item>
 <item><title>Inventor (status)</title><description>Used a command that isn't part of the built in Git command</description></item>
-<item><title>Inventor (config)</title><description>Used a command that isn't part of the built in Git command</description></item>
 </channel></rss>
