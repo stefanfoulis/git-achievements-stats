@@ -46,7 +46,7 @@ function git_achievements_command
             echo ""
             echo "Options:"
             echo "    -l --list    Show all achievements."
-            echo "    -p --publish Publish existing achievements and push to origin."
+            echo "    -p --publish Generate achievements html files and if achievements.upload not set to \"true\" add the files and push to origin."
             ;;
     esac
 }
