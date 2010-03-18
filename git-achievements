@@ -325,9 +325,13 @@ function clean_logged_achievements() {
 
 function publish_achievements
 {
-    gh_pages=`which git-achievements`
-    gh_pages=`dirname $gh_pages`
-    cd $gh_pages
+    git_achievements="$(which git-achievements)"
+    git_achievements_dir="$(dirname "${git_achievements}")"
+    if [ -L "${git_achievements}" ]; then
+      git_achievements_dir="${git_achievements_dir}/$(dirname $(readlink ${git_achievements}))"
+    fi
+
+    cd "${git_achievements_dir}"
 
     user=`git config --global user.name`
 
