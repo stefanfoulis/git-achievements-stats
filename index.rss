@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?><rss version="2.0"><channel>
 <title>Alan Rogers's Git Achievements</title>
+<item><title>Apprentice Socialite (Level 2)</title><description>pushed a branch to a remote repository using git push</description></item>
 <item><title>Apprentice Banker (Level 2)</title><description>Join two or more development histories together with git merge.</description></item>
 <item><title>Apprentice Cleaning lady (Level 1)</title><description>Remove untracked files from the working tree with git clean</description></item>
 <item><title>Inventor (clean)</title><description>Used a command that isn't part of the built in Git command</description></item>
@@ -19,5 +20,4 @@
 <item><title>Inventor (remote)</title><description>Used a command that isn't part of the built in Git command</description></item>
 <item><title>Inventor (push)</title><description>Used a command that isn't part of the built in Git command</description></item>
 <item><title>Inventor (merge)</title><description>Used a command that isn't part of the built in Git command</description></item>
-<item><title>Inventor (fetch)</title><description>Used a command that isn't part of the built in Git command</description></item>
 </channel></rss>
