@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?><rss version="2.0"><channel>
 <title>Benjamin C Meyer's Git Achievements</title>
+<item><title>Apprentice Carpenter (Level 2)</title><description>Custom git hooks are installed which help catch issues before they are shared.</description></item>
 <item><title>Presenter (Level 5)</title><description>Shows one or more objects (blobs, trees, tags and commits) with git show</description></item>
 <item><title>Apprentice Collector (Level 3)</title><description>Fetches named heads or tags from another repository with git fetch</description></item>
 <item><title>Historian (Level 6)</title><description>Investigate the commit log using git log.</description></item>
@@ -19,5 +20,4 @@
 <item><title>Apprentice Seamstress (Level 3)</title><description>amended a commit with git commit --amend.</description></item>
 <item><title>Master Carpenter (Level 14)</title><description>Custom git hooks are installed which help catch issues before they are shared.</description></item>
 <item><title>Inventor (hooks)</title><description>Used a command that isn't part of the built in Git command</description></item>
-<item><title>Presenter (Level 4)</title><description>Shows one or more objects (blobs, trees, tags and commits) with git show</description></item>
 </channel></rss>
