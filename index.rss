@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?><rss version="2.0"><channel>
 <title>Alan Rogers's Git Achievements</title>
+<item><title>Master Carpenter (Level       10)</title><description>Custom git hooks are installed which help catch issues before they are shared.</description></item>
 <item><title>Collector (Level 4)</title><description>Fetches named heads or tags from another repository with git fetch</description></item>
 <item><title>Inventor (pull)</title><description>Used a command that isn't part of the built in Git command</description></item>
 <item><title>Cherry Picker</title><description>Used git cherry-pick to add a sha from another branch into the current branch.</description></item>
@@ -19,5 +20,4 @@
 <item><title>Apprentice Product Manager (Level 1)</title><description>Stash the changes in a dirty working directory away with git stash.</description></item>
 <item><title>Apprentice Traveler (Level 2)</title><description>Streamed changes between another rcs with git svn or git p4.</description></item>
 <item><title>Inventor (stash)</title><description>Used a command that isn't part of the built in Git command</description></item>
-<item><title>Inventor (diff)</title><description>Used a command that isn't part of the built in Git command</description></item>
 </channel></rss>
