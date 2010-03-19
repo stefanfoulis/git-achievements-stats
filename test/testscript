@@ -15,9 +15,6 @@ function runtest() {
 
     git achievements --help
 
-    git config user.name "Benjamin C Meyer"
-    git config user.email "ben@meyerhome.net"
-
     git init
 
     touch README
