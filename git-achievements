@@ -131,7 +131,7 @@ function check_for_achievements
 {
     # Anyone know of a cleaner way of checking for hooks?
     gitdir=`git rev-parse --git-dir`
-    hooks=`ls -F $gitdir/hooks/ 2>/dev/null | grep '*$' | grep -ve 'sample\*$' | wc -l`
+    hooks=`ls -F $gitdir/hooks/ 2>/dev/null | grep -e '\*$' | grep -ve 'sample\*$' | wc -l`
     if [ ${hooks} -ge 1 ] ; then
         hcount_unlock_achievement "Carpenter" "Custom git hooks are installed which help catch issues before they are shared." "$hooks"
     fi
@@ -319,7 +319,7 @@ function link_to_git_docs
 }
 
 function clean_logged_achievements() {
-    cat "${ACHIEVEMENTSLOGFILE}" | grep -v '^$' | grep -v 'Git Achievement Unlocked!' | grep -v '*' | sed -e 's/^ *//g'  -e 's/ *$//g'
+    cat "${ACHIEVEMENTSLOGFILE}" | grep -ve '^$' | grep -v 'Git Achievement Unlocked!' | grep -v '*' | sed -e 's/^ *//g'  -e 's/ *$//g'
 }
 
 function publish_achievements
@@ -386,7 +386,7 @@ ul {
 
     # Unlocked Achievements
     echo "<ul>" >> index.html
-    cat "${ACHIEVEMENTSLOGFILE}" | grep -v '^$' | grep -v 'Git Achievement Unlocked!' | grep -v '*' | sed -e 's/^ *//g'  -e 's/ *$//g' | awk '{ if (NR % 2 != 0) printf "<li><div class=\"title\">" $0 "</div>"; else printf "  <div class=\"info\">" $0 "</div></li>\n" }' | link_to_git_docs | sort >> index.html
+    cat "${ACHIEVEMENTSLOGFILE}" | grep -ve '^$' | grep -v 'Git Achievement Unlocked!' | grep -v '*' | sed -e 's/^ *//g'  -e 's/ *$//g' | awk '{ if (NR % 2 != 0) printf "<li><div class=\"title\">" $0 "</div>"; else printf "  <div class=\"info\">" $0 "</div></li>\n" }' | link_to_git_docs | sort >> index.html
 
     echo "</ul>" >> index.html
 
@@ -426,7 +426,7 @@ There are $total Achievements. Some achievements can be leveled up depending on 
     # Update the RSS feed
     echo '<?xml version="1.0" encoding="utf-8"?><rss version="2.0"><channel>' > index.rss
     echo "<title>${user}'s Git Achievements</title>" >> index.rss
-    cat "${ACHIEVEMENTSLOGFILE}"  | grep -v '^$' | grep -v 'Git Achievement Unlocked!' | grep -v '*' | sed -e 's/^ *//g'  -e 's/ *$//g' | awk '{ if (NR % 2 != 0) printf "<item><title>" $0 "</title>"; else printf "<description>" $0 "</description></item>\n" }' | tail -n 20 | sed '1!G;h;$!d' >> index.rss
+    cat "${ACHIEVEMENTSLOGFILE}"  | grep -ve '^$' | grep -v 'Git Achievement Unlocked!' | grep -v '*' | sed -e 's/^ *//g'  -e 's/ *$//g' | awk '{ if (NR % 2 != 0) printf "<item><title>" $0 "</title>"; else printf "<description>" $0 "</description></item>\n" }' | tail -n 20 | sed '1!G;h;$!d' >> index.rss
     echo '</channel></rss>' >> index.rss
 
     abortcount=`git status | grep 'Changes to be committed' | wc -l`
