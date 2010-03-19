@@ -127,6 +127,14 @@ function count_unlock_achievement
     fi
 }
 
+function unalias_command () 
+{
+        #XXX maybe this should be recursive?
+	local cmdline=$(git config --get "alias.$1")
+        echo $cmdline
+        return
+}
+
 function check_for_achievements
 {
     # Anyone know of a cleaner way of checking for hooks?
@@ -148,7 +156,16 @@ function check_for_achievements
             ;;
     esac
 
-    case $1 in
+    local command=$1
+    
+    local expansion=$(unalias_command "$command")
+    if [[ $expansion ]] ; then
+      # not a real inventor
+      unlock_achievement "Garage Inventor" "Used a custom alias for a Git command"
+      command="$expansion"
+    fi
+
+    case $command in
        add )
             count_unlock_achievement "Stone Mason" "Added files to the index area for inclusion in the next commit with git add" "$1"
             case $2 in

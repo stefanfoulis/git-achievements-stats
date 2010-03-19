@@ -61,6 +61,10 @@ function runtest() {
     git format-patch HEAD^
     git reset --hard HEAD^
     git am -k3 0001*
+    git config alias.xxx ls-files
+    git xxx
+    git config --unset alias.xxx
+    
 }
 
 export PATH=$PATH:$PWD/../
