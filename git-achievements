@@ -29,7 +29,7 @@
 # SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 #
 
-function git_achivements_command
+function git_achievements_command
 {
     case $2 in
         -p|--publish )
@@ -46,7 +46,7 @@ function git_achivements_command
             echo ""
             echo "Options:"
             echo "    -l --list    Show all achievements."
-            echo "    -p --publish Publish existing achievements and push to origin."
+            echo "    -p --publish Generate achievements html files and if achievements.upload not set to \"true\" add the files and push to origin."
             ;;
     esac
 }
@@ -325,9 +325,13 @@ function clean_logged_achievements() {
 
 function publish_achievements
 {
-    gh_pages=`which git-achievements`
-    gh_pages=`dirname $gh_pages`
-    cd $gh_pages
+    git_achievements="$(which git-achievements)"
+    git_achievements_dir="$(dirname "${git_achievements}")"
+    if [ -L "${git_achievements}" ]; then
+      git_achievements_dir="${git_achievements_dir}/$(dirname $(readlink ${git_achievements}))"
+    fi
+
+    cd "${git_achievements_dir}"
 
     user=`git config --global user.name`
 
@@ -456,7 +460,7 @@ if [ ! "$1" = "achievements" ] ; then
         exit $r
     fi
 else
-    git_achivements_command "$@"
+    git_achievements_command "$@"
 fi
 
 if [ "`echo '$1' | sed -e 's/=.*//g'`" = "--git-dir" ] ; then
