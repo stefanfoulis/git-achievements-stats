@@ -127,12 +127,11 @@ function count_unlock_achievement
     fi
 }
 
-function unalias_command () 
+function unalias_command
 {
-        #XXX maybe this should be recursive?
-	local cmdline=$(git config --get "alias.$1")
-        echo $cmdline
-        return
+    #XXX maybe this should be recursive?
+    local cmdline=$(git config --get "alias.$1")
+    echo $cmdline
 }
 
 function check_for_achievements
@@ -157,8 +156,8 @@ function check_for_achievements
     esac
 
     local command=$1
-    
     local expansion=$(unalias_command "$command")
+
     if [[ $expansion ]] ; then
       # not a real inventor
       unlock_achievement "Garage Inventor" "Used a custom alias for a Git command"
