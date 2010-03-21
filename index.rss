@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?><rss version="2.0"><channel>
 <title>Benjamin C Meyer's Git Achievements</title>
+<item><title>Master Presenter (Level 7)</title><description>Shows one or more objects (blobs, trees, tags and commits) with git show</description></item>
 <item><title>Master Historian (Level 7)</title><description>Investigate the commit log using git log.</description></item>
 <item><title>Apprentice Blacksmith (Level 2)</title><description>Created a branch using git checkout -b.</description></item>
 <item><title>Presenter (Level 6)</title><description>Shows one or more objects (blobs, trees, tags and commits) with git show</description></item>
@@ -19,5 +20,4 @@
 <item><title>Historian (Level 6)</title><description>Investigate the commit log using git log.</description></item>
 <item><title>Master Author (Level 7)</title><description>Made 2^Level commits using git commit.</description></item>
 <item><title>Butcher (Level 4)</title><description>Performed an interactive rebase using git rebase -i.</description></item>
-<item><title>Apprentice Merchant (Level 2)</title><description>Added an external repository with git remote add.</description></item>
 </channel></rss>
