@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?><rss version="2.0"><channel>
 <title>Benjamin C Meyer's Git Achievements</title>
+<item><title>Apprentice Cleaning lady (Level 2)</title><description>Remove untracked files from the working tree with git clean</description></item>
 <item><title>Butcher (Level 6)</title><description>Performed an interactive rebase using git rebase -i.</description></item>
 <item><title>Master Goldsmith (Level 7)</title><description>Reviewed patches before committing with git diff --cached.</description></item>
 <item><title>Collector (Level 5)</title><description>Fetches named heads or tags from another repository with git fetch</description></item>
@@ -19,5 +20,4 @@
 <item><title>Master Stone Mason (Level 8)</title><description>Added files to the index area for inclusion in the next commit with git add</description></item>
 <item><title>Apprentice Blacksmith (Level 3)</title><description>Created a branch using git checkout -b.</description></item>
 <item><title>Merchant (Level 4)</title><description>Added an external repository with git remote add.</description></item>
-<item><title>Apprentice Hunter (Level 2)</title><description>Used git bisect to perform a binary search to find which change introduced a bug.</description></item>
 </channel></rss>
