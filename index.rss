@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?><rss version="2.0"><channel>
 <title>Benjamin C Meyer's Git Achievements</title>
+<item><title>Master Presenter (Level 9)</title><description>Shows one or more objects (blobs, trees, tags and commits) with git show</description></item>
 <item><title>Master Goldsmith (Level 8)</title><description>Reviewed patches before committing with git diff --cached.</description></item>
 <item><title>Apprentice Miller (Level 3)</title><description>Add only part of a file to the stage 595 times with git add -p.</description></item>
 <item><title>Collector (Level 6)</title><description>Fetches named heads or tags from another repository with git fetch</description></item>
@@ -19,5 +20,4 @@
 <item><title>Apprentice Thug (Level 3)</title><description>Forced pushed a branch with git push -f</description></item>
 <item><title>Apprentice Thug (Level 2)</title><description>Forced pushed a branch with git push -f</description></item>
 <item><title>Master Presenter (Level 8)</title><description>Shows one or more objects (blobs, trees, tags and commits) with git show</description></item>
-<item><title>Apprentice Thug (Level 1)</title><description>Forced pushed a branch with git push -f</description></item>
 </channel></rss>
