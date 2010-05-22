@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?><rss version="2.0"><channel>
 <title>Benjamin C Meyer's Git Achievements</title>
+<item><title>Investigator (Level 5)</title><description>Used git blame to annotates a file with information about how each line changed.</description></item>
 <item><title>Master Goldsmith (Level 9)</title><description>Reviewed patches before committing with git diff --cached.</description></item>
 <item><title>Master Butcher (Level 7)</title><description>Performed an interactive rebase using git rebase -i.</description></item>
 <item><title>Master Seamstress (Level 7)</title><description>amended a commit with git commit --amend.</description></item>
@@ -19,5 +20,4 @@
 <item><title>Butcher (Level 6)</title><description>Performed an interactive rebase using git rebase -i.</description></item>
 <item><title>Master Goldsmith (Level 7)</title><description>Reviewed patches before committing with git diff --cached.</description></item>
 <item><title>Collector (Level 5)</title><description>Fetches named heads or tags from another repository with git fetch</description></item>
-<item><title>Apprentice Miller (Level 2)</title><description>Add only part of a file to the stage 394 times with git add -p.</description></item>
 </channel></rss>
