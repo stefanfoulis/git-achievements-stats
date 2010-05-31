@@ -343,7 +343,14 @@ function publish_achievements
     git_achievements="$(which git-achievements)"
     git_achievements_dir="$(dirname "${git_achievements}")"
     if [ -L "${git_achievements}" ]; then
-      git_achievements_dir="${git_achievements_dir}/$(dirname $(readlink ${git_achievements}))"
+      case "$(dirname $(readlink ${git_achievements}))" in
+        /*)
+          git_achievements_dir="$(dirname $(readlink ${git_achievements}))"
+          ;;
+        *)
+          git_achievements_dir="${git_achievements_dir}/$(dirname $(readlink ${git_achievements}))"
+          ;;
+      esac
     fi
 
     cd "${git_achievements_dir}"
