@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?><rss version="2.0"><channel>
 <title>Benjamin C Meyer's Git Achievements</title>
+<item><title>Master Author (Level 9)</title><description>Made 2^Level commits using git commit.</description></item>
 <item><title>Master Socialite (Level 8)</title><description>pushed a branch to a remote repository using git push</description></item>
 <item><title>Miller (Level 4)</title><description>Add only part of a file to the stage 1028 times with git add -p.</description></item>
 <item><title>Master Stone Mason (Level 10)</title><description>Added files to the index area for inclusion in the next commit with git add</description></item>
@@ -19,5 +20,4 @@
 <item><title>Master Socialite (Level 7)</title><description>pushed a branch to a remote repository using git push</description></item>
 <item><title>Master Stone Mason (Level 9)</title><description>Added files to the index area for inclusion in the next commit with git add</description></item>
 <item><title>Investigator (Level 4)</title><description>Used git blame to annotates a file with information about how each line changed.</description></item>
-<item><title>Banker (Level 4)</title><description>Join two or more development histories together with git merge.</description></item>
 </channel></rss>
