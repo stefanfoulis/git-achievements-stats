@@ -76,7 +76,7 @@ function unlock_achievement()
     if [ $? -eq 0 ] ; then
         return
     fi
-    output_achievement "$@"
+    output_achievement "$@" >&2
     output_achievement "$@" >> "${ACHIEVEMENTSLOGFILE}"
 
     if [ "`git config --global achievement.upload`" = "true" ] ; then
