@@ -1,23 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?><rss version="2.0"><channel>
 <title>Benjamin C Meyer's Git Achievements</title>
-<item><title>Miller (Level 5)</title><description>Add only part of a file to the stage 1057 times with git add -p.</description></item>
-<item><title>Master Author (Level 9)</title><description>Made 2^Level commits using git commit.</description></item>
-<item><title>Master Socialite (Level 8)</title><description>pushed a branch to a remote repository using git push</description></item>
-<item><title>Miller (Level 4)</title><description>Add only part of a file to the stage 1028 times with git add -p.</description></item>
-<item><title>Master Stone Mason (Level 10)</title><description>Added files to the index area for inclusion in the next commit with git add</description></item>
-<item><title>Master Collector (Level 7)</title><description>Fetches named heads or tags from another repository with git fetch</description></item>
-<item><title>Investigator (Level 5)</title><description>Used git blame to annotates a file with information about how each line changed.</description></item>
-<item><title>Master Goldsmith (Level 9)</title><description>Reviewed patches before committing with git diff --cached.</description></item>
-<item><title>Master Butcher (Level 7)</title><description>Performed an interactive rebase using git rebase -i.</description></item>
-<item><title>Master Seamstress (Level 7)</title><description>amended a commit with git commit --amend.</description></item>
-<item><title>Apprentice Fisherman (Level 2)</title><description>Look for specified patterns in the current repository with git grep.</description></item>
-<item><title>Master Historian (Level 9)</title><description>Investigate the commit log using git log.</description></item>
-<item><title>Blacksmith (Level 4)</title><description>Created a branch using git checkout -b.</description></item>
-<item><title>Master Presenter (Level 9)</title><description>Shows one or more objects (blobs, trees, tags and commits) with git show</description></item>
-<item><title>Master Goldsmith (Level 8)</title><description>Reviewed patches before committing with git diff --cached.</description></item>
-<item><title>Apprentice Miller (Level 3)</title><description>Add only part of a file to the stage 595 times with git add -p.</description></item>
-<item><title>Collector (Level 6)</title><description>Fetches named heads or tags from another repository with git fetch</description></item>
-<item><title>Chimney Sweeper (Level 4)</title><description>Used git gc to run a number of housekeeping tasks on the current repository.</description></item>
-<item><title>Master Socialite (Level 7)</title><description>pushed a branch to a remote repository using git push</description></item>
-<item><title>Master Stone Mason (Level 9)</title><description>Added files to the index area for inclusion in the next commit with git add</description></item>
+<item><title>Apprentice Author (Level 1)</title><description>Made 2^Level commits using git commit.</description></item>
+<item><title>Apprentice Socialite (Level 2)</title><description>pushed a branch to a remote repository using git push</description></item>
+<item><title>Apprentice Presenter (Level 3)</title><description>Shows one or more objects (blobs, trees, tags and commits) with git show</description></item>
+<item><title>Apprentice Socialite (Level 1)</title><description>pushed a branch to a remote repository using git push</description></item>
+<item><title>Cherry Picker</title><description>Used git cherry-pick to add a sha from another branch into the current branch.</description></item>
+<item><title>Apprentice Collector (Level 3)</title><description>Fetches named heads or tags from another repository with git fetch</description></item>
+<item><title>Apprentice Merchant (Level 2)</title><description>Added an external repository with git remote add.</description></item>
+<item><title>Apprentice Stone Mason (Level 2)</title><description>Added files to the index area for inclusion in the next commit with git add</description></item>
+<item><title>Apprentice Merchant (Level 1)</title><description>Added an external repository with git remote add.</description></item>
+<item><title>Apprentice Collector (Level 2)</title><description>Fetches named heads or tags from another repository with git fetch</description></item>
+<item><title>Apprentice Collector (Level 1)</title><description>Fetches named heads or tags from another repository with git fetch</description></item>
+<item><title>Inventor (pull)</title><description>Used a command that isn't part of the built in Git command</description></item>
+<item><title>Inventor (clone)</title><description>Used a command that isn't part of the built in Git command</description></item>
+<item><title>Inventor (reset)</title><description>Used a command that isn't part of the built in Git command</description></item>
+<item><title>Inventor (remote)</title><description>Used a command that isn't part of the built in Git command</description></item>
+<item><title>Inventor (diff)</title><description>Used a command that isn't part of the built in Git command</description></item>
+<item><title>Inventor (fetch)</title><description>Used a command that isn't part of the built in Git command</description></item>
+<item><title>Master Carpenter (Level       10)</title><description>Custom git hooks are installed which help catch issues before they are shared.</description></item>
 </channel></rss>
