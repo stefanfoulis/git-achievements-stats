@@ -423,6 +423,8 @@ There are $total Achievements. Some achievements can be leveled up depending on 
     # Update the RSS feed
     echo '<?xml version="1.0" encoding="utf-8"?><rss version="2.0"><channel>' > index.rss
     echo "<title>${user}'s Git Achievements</title>" >> index.rss
+    echo "<description></description>" >> index.rss
+    echo "<link></link>" >> index.rss
     cat "${ACHIEVEMENTSLOGFILE}"  | grep -ve '^$' | grep -v 'Git Achievement Unlocked!' | grep -v '*' | sed -e 's/^ *//g'  -e 's/ *$//g' | awk '{ if (NR % 2 != 0) printf "<item><title>" $0 "</title>"; else printf "<description>" $0 "</description></item>\n" }' | tail -n 20 | sed '1!G;h;$!d' >> index.rss
     echo '</channel></rss>' >> index.rss
 
