@@ -40,7 +40,7 @@ function git_achievements_command
             ;;
         * )
             echo "Git Achievements"
-            count=`cat "${ACHIEVEMENTSLOGFILE}" 2> /dev/null | grep Unlocked | wc -l`
+            count=$(grep -hsc Unlocked "${ACHIEVEMENTSLOGFILE}" /dev/null)
             echo ""
             echo "You currently have: $count achievements"
             echo ""
@@ -90,7 +90,7 @@ function count_command
     export count=`awk "START {n=0} /$1/ {n++} END { print n }" "$ACTIONLOGFILE"`
     #export powerof2=`awk "START {n=0} /$1/ {n++} END { print and(n, n-1) }" "$ACTIONLOGFILE"`
     # mysys gawk it old and doesn't have the bitwise operation and :( so we have to use perl for now
-    export powerof2=`echo 'use Env; $y=$ENV{'count'}; $x=($y & ($y-1)); print "$x\n" ' | perl -`
+    export powerof2=$(perl -le '$y = $ENV{count}; print ($y & ($y-1));')
 
     if [ ${count} -eq 1 ] ; then
         powerof2="1"
@@ -100,9 +100,10 @@ function count_command
 
 function hcount_unlock_achievement
 {
-    title="${1}"
-    description="${2}"
-    power="$3"
+    local title="${1}"
+    local description="${2}"
+    local power="$3"
+    local pre=""
     case $power in
         1|2|3)
         pre="Apprentice "
@@ -118,9 +119,9 @@ function hcount_unlock_achievement
 
 function count_unlock_achievement
 {
-    title="${1}"
-    description="${2}"
-    cmd="${3}"
+    local title="${1}"
+    local description="${2}"
+    local cmd="${3}"
     count_command "${cmd}"
     if [ "${powerof2}" = "0" ] ; then
         hcount_unlock_achievement "${title}" "${description}" "$power"
@@ -137,9 +138,9 @@ function unalias_command
 function check_for_achievements
 {
     # Anyone know of a cleaner way of checking for hooks?
-    gitdir=`git rev-parse --git-dir 2>/dev/null`
-    hooks=`ls -F $gitdir/hooks/ 2>/dev/null | grep -e '\*$' | grep -ve 'sample\*$' | wc -l`
-    if [ ${hooks} -ge 1 ] ; then
+    local gitdir=$(git rev-parse --git-dir 2>/dev/null)
+    # any executable hooks present that are not samples?
+    if find $gitdir/hooks/ -type f -executable ! -name "*.sample" | grep -q ""; then
         hcount_unlock_achievement "Carpenter" "Custom git hooks are installed which help catch issues before they are shared." "$hooks"
     fi
 
@@ -331,17 +332,17 @@ function check_for_achievements
 
 function link_to_git_docs
 {
-    sed -e 's_git \([a-z0-9-]*\)_<a href="http://www.kernel.org/pub/software/scm/git/docs/git-\1.html">git-\1</a>_g' | sed -e 's/\/git-hooks/\/githooks/g'
+    sed -e 's_git \([a-z0-9-]*\)_<a href="http://www.kernel.org/pub/software/scm/git/docs/git-\1.html">git-\1</a>_g' -e 's/\/git-hooks/\/githooks/g'
 }
 
 function clean_logged_achievements() {
-    cat "${ACHIEVEMENTSLOGFILE}" | grep -ve '^$' | grep -v 'Git Achievement Unlocked!' | grep -v '*' | sed -e 's/^ *//g'  -e 's/ *$//g'
+    sed -r -e '/(^$)|Git Achievement Unlocked!|\*/d' -e 's/^ *| *$//g' "${ACHIEVEMENTSLOGFILE}"
 }
 
 function publish_achievements
 {
-    git_achievements="$(which git-achievements)"
-    git_achievements_dir="$(dirname "${git_achievements}")"
+    local git_achievements="$(which git-achievements)"
+    local git_achievements_dir="$(dirname "${git_achievements}")"
     if [ -L "${git_achievements}" ]; then
       case "$(dirname $(readlink ${git_achievements}))" in
         /*)
@@ -355,65 +356,67 @@ function publish_achievements
 
     cd "${git_achievements_dir}"
 
-    user=`git config --global user.name`
+    local user=`git config --global user.name`
 
-echo "
+cat > index.html <<EOF
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"> 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <title>${user}'s Git Achievements</title>
-<link rel=\"alternate\" type=\"application/rss+xml\" title\"rss feed\" href=\"index.rss\"/>
-<link rel=\"stylesheet\" type=\"text/css\" href=\"style.css\"/>
+<link rel="alternate" type="application/rss+xml" title"rss feed" href="index.rss"/>
+<link rel="stylesheet" type="text/css" href="style.css"/>
 </head>
 <body>
-" > index.html
-    echo "<h2>${user}'s Git Achievements</h2>" >> index.html
+<h2>${user}'s Git Achievements</h2>"
+EOF
 
     # STATS
-    cat git-achievements | grep 'unlock_achievement ' | grep -v ' sed ' | grep -v '\${' | sed -e 's/.*unlock_achievement //g' -e 's/^"//g' -e 's/"$//g' -e 's/\$power/X/g' -e 's/\$count/X/g' -e 's/\$hooks/X/g' | sort | awk -F"\" \"" '{ print "<li><div class=\"title\">" $1 "</div><div class=\"info\">" $2 "</div></li>" }' | link_to_git_docs > all.html
-    total=`cat all.html | wc -l`
+    grep 'unlock_achievement ' git-achievements | grep -v ' sed |\${' | sed -e 's/.*unlock_achievement //g' -e 's/^"//g' -e 's/"$//g' -e 's/\$power/X/g' -e 's/\$count/X/g' -e 's/\$hooks/X/g' | sort | awk -F"\" \"" '{ print "<li><div class=\"title\">" $1 "</div><div class=\"info\">" $2 "</div></li>" }' | link_to_git_docs > all.html
+    local total=`wc -l < all.html`
 
-    unlockedCount=`clean_logged_achievements | awk '{ if (NR % 2 != 0) print $0 }' | sed -e 's/Apprentice //g' -e 's/Master //g' -e 's/(.*//g' | sort | uniq | wc -l`
-    levels=`clean_logged_achievements | awk '{ if (NR % 2 != 0) print $0 }' | grep Level | sed -e 's/.* //g' -e 's/)//g' | awk '{ t=t+$0 } END { print t }'`
-    onelevels=`clean_logged_achievements | awk '{ if (NR % 2 != 0) print $0 }' | wc -l`
+    local unlockedCount=`clean_logged_achievements | awk '{ if (NR % 2 != 0) print $0 }' | sed -e 's/Apprentice //g' -e 's/Master //g' -e 's/(.*//g' | sort -u | wc -l`
+    local levels=`clean_logged_achievements | awk '{ if (NR % 2 != 0) print $0 }' | grep Level | sed -e 's/.* //g' -e 's/)//g' | awk '{ t=t+$0 } END { print t }'`
+    local onelevels=`clean_logged_achievements | awk '{ if (NR % 2 != 0) N++} END {print N+0}'`
     let points="${levels}"+"${onelevels}"
     echo "Unlocked ${unlockedCount}/$total <a href=\"http://github.com/icefox/git-achievements\">Git Achievements</a> for $points points<br>" >> index.html
 
-    unlocked=`cat "${ACHIEVEMENTSLOGFILE}" | grep Unlocked | wc -l`
+    unlocked=`grep -c Unlocked "${ACHIEVEMENTSLOGFILE}" /dev/null`
 
     # Unlocked Achievements
     echo "<ul>" >> index.html
-    cat "${ACHIEVEMENTSLOGFILE}" | grep -ve '^$' | grep -v 'Git Achievement Unlocked!' | grep -v '*' | sed -e 's/^ *//g'  -e 's/ *$//g' | awk '{ if (NR % 2 != 0) printf "<li><div class=\"title\">" $0 "</div>"; else printf "  <div class=\"info\">" $0 "</div></li>\n" }' | link_to_git_docs | sort >> index.html
+    grep -ve '^$|Git Achievement Unlocked!|\*' "${ACHIEVEMENTSLOGFILE}" | sed -e 's/^ *//g'  -e 's/ *$//g' | awk '{ if (NR % 2 != 0) printf "<li><div class=\"title\">" $0 "</div>"; else printf "  <div class=\"info\">" $0 "</div></li>\n" }' | link_to_git_docs | sort >> index.html
 
     echo "</ul>" >> index.html
 
     # Git Commands
     echo 'Git commands sorted by usage:' >> index.html
     echo "<pre style=\"text-align: left\">" >> index.html
-    cat  "${ACTIONLOGFILE}" | grep -v Date | awk '{ print $1 }' | sort | uniq -c | sort -nr >> index.html
+    awk '!/Date/ { print $1 }' "${ACTIONLOGFILE}" | sort | uniq -c | sort -nr >> index.html
     echo "</pre>" >> index.html
 
     # Locked Achievements
-    echo "<script type=\"text/javascript\">
+    cat >> index.html <<EOF
+<script type="text/javascript">
 function showLocked() {
     document.getElementById('locked').style.visibility = 'visible';
     document.getElementById('showlocked').style.visibility = 'hidden';
 }
 </script>
-<a id=\"showlocked\" href=\"javascript:showLocked()\" >Show locked Achievements</a>
-<div id=\"locked\">
+<a id="showlocked" href="javascript:showLocked()" >Show locked Achievements</a>
+<div id="locked">
 There are $total Achievements. Some achievements can be leveled up depending on the number of times it is used (Used 2 times = level 1, 4 = level 2, 8 = level 3, 16 = level 4, 32 = level 5, etc)
-<ul>" >> index.html
+<ul>"
+EOF
 
-    cat index.html | sed -e 's/Apprentice //g' -e 's/Master //g'> temp.html
-    cat all.html | while read line ;
+    sed -e 's/Apprentice //g' -e 's/Master //g' index.html > temp.html
+    while read line;
     do
         stripedline=`echo $line | sed -e 's/<\/div>.*//g' -e 's/(.*//g' -e 's/Apprentice //g'`
         grep "$stripedline" temp.html > /dev/null
         if [ ! $? -eq 0 ] ; then
             echo $line >> index.html
         fi
-    done
+    done < all.html
     echo '</ul></div>' >> index.html
     rm temp.html
     rm all.html
@@ -421,14 +424,17 @@ There are $total Achievements. Some achievements can be leveled up depending on 
     echo "</body></html>" >> index.html
 
     # Update the RSS feed
-    echo '<?xml version="1.0" encoding="utf-8"?><rss version="2.0"><channel>' > index.rss
-    echo "<title>${user}'s Git Achievements</title>" >> index.rss
-    echo "<description></description>" >> index.rss
-    echo "<link></link>" >> index.rss
-    cat "${ACHIEVEMENTSLOGFILE}"  | grep -ve '^$' | grep -v 'Git Achievement Unlocked!' | grep -v '*' | sed -e 's/^ *//g'  -e 's/ *$//g' | awk '{ if (NR % 2 != 0) printf "<item><title>" $0 "</title>"; else printf "<description>" $0 "</description></item>\n" }' | tail -n 20 | sed '1!G;h;$!d' >> index.rss
+    cat > index.rss <<EOF
+<?xml version="1.0" encoding="utf-8"?><rss version="2.0"><channel>
+<title>${user}'s Git Achievements</title>
+<description></description>
+<link></link>
+EOF
+
+    grep -ve '^$|Git Achievement Unlocked!|\*' "${ACHIEVEMENTSLOGFILE}" | sed -e 's/^ *//g'  -e 's/ *$//g' | awk '{ if (NR % 2 != 0) printf "<item><title>" $0 "</title>"; else printf "<description>" $0 "</description></item>\n" }' | tail -n 20 | sed '1!G;h;$!d' >> index.rss
     echo '</channel></rss>' >> index.rss
 
-    abortcount=`git status | grep 'Changes to be committed' | wc -l`
+    abortcount=`git status | grep -c 'Changes to be committed'`
     if [ ! $abortcount -eq 0 ] ; then
         echo "There are staged changes in the repository, updates let uncommitted"
         return
