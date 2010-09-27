@@ -136,8 +136,8 @@ function check_for_achievements
 {
     # Anyone know of a cleaner way of checking for hooks?
     local gitdir=$(git rev-parse --git-dir 2>/dev/null)
-    # any executable hooks present that are not samples?
-    if find $gitdir/hooks/ -type f -executable ! -name "*.sample" | grep -q ""; then
+    hooks=`ls -F $gitdir/hooks/ 2>/dev/null | grep -e '\*$' | grep -ve 'sample\*$' | wc -l`
+    if [ ${hooks} -ge 1 ] ; then
         hcount_unlock_achievement "Carpenter" "Custom git hooks are installed which help catch issues before they are shared." "$hooks"
     fi
 
