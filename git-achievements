@@ -311,6 +311,16 @@ function check_for_achievements
         stash )
             count_unlock_achievement "Product Manager" "Stash the changes in a dirty working directory away with git stash." "$1"
             ;;
+        submodule )
+            case $2 in
+                add )
+                count_unlock_achievement "Cathedral Architect" "Added a submodule to a repository." "submodule add"
+                ;;
+                update )
+                count_unlock_achievement "Cathedral Worker" "Cloned submodule repository and checked out commits specified by superproject." "submodule update"
+                ;;
+            esac
+            ;;
         svn|p4 )
             count_unlock_achievement "Traveler" "Streamed changes between another rcs with git svn or git p4." "$1"
             ;;
