@@ -2,6 +2,7 @@
 <title>Benjamin C Meyer's Git Achievements</title>
 <description></description>
 <link></link>
+<item><title>Apprentice Gardner (Level 1)</title><description>Shows the commit ancestry graph with git show-branch</description></item>
 <item><title>Blacksmith (Level 5)</title><description>Created a branch using git checkout -b.</description></item>
 <item><title>Miller (Level 6)</title><description>Add only part of a file to the stage 1262 times with git add -p.</description></item>
 <item><title>Merchant (Level 5)</title><description>Added an external repository with git remote add.</description></item>
@@ -21,5 +22,4 @@
 <item><title>Apprentice Fisherman (Level 2)</title><description>Look for specified patterns in the current repository with git grep.</description></item>
 <item><title>Master Historian (Level 9)</title><description>Investigate the commit log using git log.</description></item>
 <item><title>Blacksmith (Level 4)</title><description>Created a branch using git checkout -b.</description></item>
-<item><title>Master Presenter (Level 9)</title><description>Shows one or more objects (blobs, trees, tags and commits) with git show</description></item>
 </channel></rss>
