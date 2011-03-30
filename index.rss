@@ -2,6 +2,7 @@
 <title>stefanfoulis's Git Achievements</title>
 <description></description>
 <link></link>
+<item><title>Apprentice Stone Mason (Level 1)</title><description>Added files to the index area for inclusion in the next commit with git add</description></item>
 <item><title>Apprentice Product Manager (Level 1)</title><description>Stash the changes in a dirty working directory away with git stash.</description></item>
 <item><title>Caretaker</title><description>Added a .gitignore file to a repository.</description></item>
 <item><title>Student</title><description>Accessed the documentation for a command with git [command] --help</description></item>
