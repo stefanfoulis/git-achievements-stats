@@ -2,10 +2,8 @@
 <title>stefanfoulis's Git Achievements</title>
 <description></description>
 <link></link>
+<item><title>Apprentice Banker (Level 2)</title><description>Join two or more development histories together with git merge.</description></item>
 <item><title>Apprentice Banker (Level 1)</title><description>Join two or more development histories together with git merge.</description></item>
-<item><title>Pedantic (Level 4)</title><description>Use the git-flow extension to encourage an orderly and standardized branching model</description></item>
-<item><title>Apprentice Pedantic (Level 3)</title><description>Use git flow to encourage an orderly and standardized branching model</description></item>
-<item><title>Apprentice Pedantic (Level 2)</title><description>Use git flow to encourage an orderly and standardized branching model</description></item>
 <item><title>Apprentice Collector (Level 2)</title><description>Fetches named heads or tags from another repository with git fetch</description></item>
 <item><title>Apprentice Collector (Level 1)</title><description>Fetches named heads or tags from another repository with git fetch</description></item>
 <item><title>Apprentice Socialite (Level 2)</title><description>pushed a branch to a remote repository using git push</description></item>
