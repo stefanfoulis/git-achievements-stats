@@ -2,6 +2,7 @@
 <title>stefanfoulis's Git Achievements</title>
 <description></description>
 <link></link>
+<item><title>Product Manager (Level 4)</title><description>Stash the changes in a dirty working directory away with git stash.</description></item>
 <item><title>Socialite (Level 5)</title><description>pushed a branch to a remote repository using git push</description></item>
 <item><title>Apprentice Traveler (Level 1)</title><description>Streamed changes between another rcs with git svn or git p4.</description></item>
 <item><title>Author (Level 4)</title><description>Made 2^Level commits using git commit.</description></item>
@@ -21,5 +22,4 @@
 <item><title>Apprentice Pedantic (Level 3)</title><description>Use the flow extension to encourage an orderly and standardized branching model</description></item>
 <item><title>Apprentice Banker (Level 2)</title><description>Join two or more development histories together with git merge.</description></item>
 <item><title>Apprentice Banker (Level 1)</title><description>Join two or more development histories together with git merge.</description></item>
-<item><title>Apprentice Collector (Level 2)</title><description>Fetches named heads or tags from another repository with git fetch</description></item>
 </channel></rss>
