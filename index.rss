@@ -2,6 +2,7 @@
 <title>stefanfoulis's Git Achievements</title>
 <description></description>
 <link></link>
+<item><title>Pedantic (Level 6)</title><description>Use the flow extension to encourage an orderly and standardized branching model</description></item>
 <item><title>Merchant (Level 4)</title><description>Added an external repository with git remote add.</description></item>
 <item><title>Apprentice Blacksmith (Level 2)</title><description>Created a branch using git checkout -b.</description></item>
 <item><title>Master Socialite (Level 7)</title><description>pushed a branch to a remote repository using git push</description></item>
@@ -21,5 +22,4 @@
 <item><title>Apprentice Traveler (Level 1)</title><description>Streamed changes between another rcs with git svn or git p4.</description></item>
 <item><title>Author (Level 4)</title><description>Made 2^Level commits using git commit.</description></item>
 <item><title>Apprentice Product Manager (Level 3)</title><description>Stash the changes in a dirty working directory away with git stash.</description></item>
-<item><title>Pedantic (Level 4)</title><description>Use the flow extension to encourage an orderly and standardized branching model</description></item>
 </channel></rss>
